@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ScoreResponse {
     private Long lessonId;
+    private Long scoreId;
     private String lessonName;
     private Long score;
 

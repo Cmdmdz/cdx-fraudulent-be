@@ -61,15 +61,16 @@ public class ScoreService {
         List<Long> ids = new ArrayList<>();
         scores.forEach(score -> ids.add(score.getLessonId()));
         var lessons = lessonRepository.findAllById(ids);
-        UserResponse userResponse = UserResponse.builder().firstname(user.getFirstname()).lastname(user.getLastname()).build();
+        UserResponse userResponse = UserResponse.builder().userId(user.getUserId()).firstname(user.getFirstname()).lastname(user.getLastname()).build();
         List<ScoreResponse> scoreResponses = new ArrayList<>();
         scores.forEach(score -> {
             Lesson lesson = lessons.stream()
-                    .filter(lessonElememt -> lessonElememt.getLessonId().equals(score.getLessonId()))
+                    .filter(lessonElement -> lessonElement.getLessonId().equals(score.getLessonId()))
                     .toList().get(0);
             ScoreResponse scoreResponse = ScoreResponse.builder()
                     .lessonId(lesson.getLessonId())
                     .lessonName(lesson.getLessonName())
+                    .scoreId(score.getScoreId())
                     .score(score.getScore())
                     .build();
             scoreResponses.add(scoreResponse);
