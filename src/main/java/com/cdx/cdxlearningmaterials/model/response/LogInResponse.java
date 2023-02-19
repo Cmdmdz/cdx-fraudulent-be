@@ -1,4 +1,4 @@
-package com.cdx.cdxlearningmaterials.model.request;
+package com.cdx.cdxlearningmaterials.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

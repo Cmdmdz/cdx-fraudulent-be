@@ -1,6 +1,6 @@
 package com.cdx.cdxlearningmaterials.controllers;
 
-import com.cdx.cdxlearningmaterials.model.User;
+import com.cdx.cdxlearningmaterials.repository.dao.User;
 import com.cdx.cdxlearningmaterials.model.request.LogInRequest;
 import com.cdx.cdxlearningmaterials.services.LogInService;
 import com.cdx.cdxlearningmaterials.services.RegisterService;

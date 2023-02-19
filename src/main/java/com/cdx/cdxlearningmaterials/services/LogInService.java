@@ -1,8 +1,8 @@
 package com.cdx.cdxlearningmaterials.services;
 
-import com.cdx.cdxlearningmaterials.model.User;
+import com.cdx.cdxlearningmaterials.repository.dao.User;
 import com.cdx.cdxlearningmaterials.model.request.LogInRequest;
-import com.cdx.cdxlearningmaterials.model.request.LogInResponse;
+import com.cdx.cdxlearningmaterials.model.response.LogInResponse;
 import com.cdx.cdxlearningmaterials.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

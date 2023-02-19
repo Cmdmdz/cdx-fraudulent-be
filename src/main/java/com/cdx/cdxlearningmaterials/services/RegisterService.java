@@ -1,9 +1,7 @@
 package com.cdx.cdxlearningmaterials.services;
 
-import com.cdx.cdxlearningmaterials.model.User;
+import com.cdx.cdxlearningmaterials.repository.dao.User;
 import com.cdx.cdxlearningmaterials.repository.UserRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

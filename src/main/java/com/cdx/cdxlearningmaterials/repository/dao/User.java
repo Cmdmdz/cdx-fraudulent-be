@@ -1,4 +1,4 @@
-package com.cdx.cdxlearningmaterials.model;
+package com.cdx.cdxlearningmaterials.repository.dao;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
