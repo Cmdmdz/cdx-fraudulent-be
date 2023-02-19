@@ -29,5 +29,7 @@ public class User {
     private String lastname;
     @NotBlank
     private String dob;
+    @NotBlank
+    private String role;
 }
 

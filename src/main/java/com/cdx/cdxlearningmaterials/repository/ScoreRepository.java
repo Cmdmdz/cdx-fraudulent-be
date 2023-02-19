@@ -12,5 +12,4 @@ public interface ScoreRepository extends JpaRepository<Score, Long> {
     List<Score> findAllByUserId(Long userId);
     Boolean existsByUserIdAndLessonId(Long userId, Long lessonId);
     Score findByUserIdAndLessonId(Long userId, Long lessonId);
-
 }

@@ -11,7 +11,7 @@ import javax.validation.Valid;
 
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RestController
+@RestController("/lesson")
 public class LessonController {
     private final LessonService lessonService;
     @GetMapping("/get-all-lesson")

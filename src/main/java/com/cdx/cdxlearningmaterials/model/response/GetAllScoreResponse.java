@@ -1,7 +1,5 @@
 package com.cdx.cdxlearningmaterials.model.response;
 
-import com.cdx.cdxlearningmaterials.repository.dao.Lesson;
-import com.cdx.cdxlearningmaterials.repository.dao.Score;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +11,6 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetScoreResponse {
-    private UserResponse user;
-    private List<ScoreResponse> scores;
+public class GetAllScoreResponse {
+    private List<GetScoreResponse> usersScore;
 }
