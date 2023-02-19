@@ -1,6 +1,8 @@
 package com.cdx.cdxlearningmaterials.services;
 
+import com.cdx.cdxlearningmaterials.model.User;
 import com.cdx.cdxlearningmaterials.model.request.LogInRequest;
+import com.cdx.cdxlearningmaterials.model.request.LogInResponse;
 import com.cdx.cdxlearningmaterials.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,10 +24,11 @@ public class LogInService {
         if (Boolean.TRUE.equals(isUsernamePasswordMatch)) {
             byte[] TOKEN = new byte[24];
             SECURE_RANDOM.nextBytes(TOKEN);
-
-            return new ResponseEntity<>(ENCODER.encodeToString(TOKEN), HttpStatus.OK);
+            User user = userRepository.findByUsername(request.getUsername());
+            LogInResponse response = LogInResponse.builder().userId(user.getUserId()).username(user.getUsername()).token(ENCODER.encodeToString(TOKEN)).build();
+            return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Username or password is incorrect",HttpStatus.NOT_FOUND);
         }
     }
 }
