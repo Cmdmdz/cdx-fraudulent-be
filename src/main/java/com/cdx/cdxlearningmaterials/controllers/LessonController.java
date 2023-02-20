@@ -11,14 +11,14 @@ import javax.validation.Valid;
 
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RestController("/lesson")
+@RestController()
 public class LessonController {
     private final LessonService lessonService;
-    @GetMapping("/get-all-lesson")
+    @GetMapping("/lesson/get-all-lesson")
     public ResponseEntity<?> getAllLesson () {
         return lessonService.findAllLesson();
     }
-    @PostMapping("/add-lesson")
+    @PostMapping("/lesson/add-lesson")
     public ResponseEntity<?> addLesson (@Valid @RequestBody Lesson request) {
         return lessonService.addLesson(request);
     }

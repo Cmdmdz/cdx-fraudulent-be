@@ -12,22 +12,22 @@ import javax.validation.Valid;
 
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RestController("/score")
+@RestController()
 public class ScoreController {
     private final ScoreService scoreService;
-    @GetMapping("/{userId}")
+    @GetMapping("/score/user/{userId}")
     public ResponseEntity<?> getScoreByUserId (@Valid @PathVariable Long userId ) {
         return scoreService.findAllScoreOfUserId(userId);
     }
-    @GetMapping("/{all}")
+    @GetMapping("/score/all")
     public ResponseEntity<?> getScoreOfAllUser () {
         return scoreService.findScoreOfAllUser();
     }
-    @PostMapping("/add")
+    @PostMapping("/score/add")
     public ResponseEntity<?> addScore (@Valid @RequestBody Score request) {
         return scoreService.addScore(request);
     }
-    @DeleteMapping("/{scoreId}")
+    @DeleteMapping("/score/{scoreId}")
     public ResponseEntity<?> deleteScoreById (@Valid @PathVariable Long scoreId) {
         return scoreService.deleteScoreById(scoreId);
     }
