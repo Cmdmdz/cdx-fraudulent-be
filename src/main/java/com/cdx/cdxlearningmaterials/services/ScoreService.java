@@ -58,15 +58,10 @@ public class ScoreService {
     private GetScoreResponse findScoreByUserId(Long userId) {
         User user = userRepository.findByUserId(userId);
         List<Score> scores = scoreRepository.findAllByUserId(userId);
-        List<Long> ids = new ArrayList<>();
-        scores.forEach(score -> ids.add(score.getLessonId()));
-        var lessons = lessonRepository.findAllById(ids);
         UserResponse userResponse = UserResponse.builder().userId(user.getUserId()).firstname(user.getFirstname()).lastname(user.getLastname()).build();
         List<ScoreResponse> scoreResponses = new ArrayList<>();
         scores.forEach(score -> {
-            Lesson lesson = lessons.stream()
-                    .filter(lessonElement -> lessonElement.getLessonId().equals(score.getLessonId()))
-                    .toList().get(0);
+            Lesson lesson = lessonRepository.findByLessonId(score.getLessonId());
             ScoreResponse scoreResponse = ScoreResponse.builder()
                     .lessonId(lesson.getLessonId())
                     .lessonName(lesson.getLessonName())
