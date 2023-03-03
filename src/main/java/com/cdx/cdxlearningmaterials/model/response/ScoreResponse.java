@@ -14,5 +14,6 @@ public class ScoreResponse {
     private Long scoreId;
     private String lessonName;
     private Long score;
+    private String fullName;
 
 }
