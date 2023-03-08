@@ -23,6 +23,7 @@ public class ScoreController {
     public ResponseEntity<?> getScoreOfAllUser () {
         return scoreService.findScoreOfAllUser();
     }
+
     @PostMapping("/score/add")
     public ResponseEntity<?> addScore (@Valid @RequestBody Score request) {
         return scoreService.addScore(request);

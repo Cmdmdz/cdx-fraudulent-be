@@ -25,6 +25,7 @@ public class AuthenController {
     public ResponseEntity<?> register(@Valid @RequestBody User request) {
         return registerService.execute(request);
     }
+
     @PostMapping("/login")
     public ResponseEntity<?> login (@Valid @RequestBody LogInRequest request) {
         return logInService.execute(request);
