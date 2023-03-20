@@ -1,19 +1,19 @@
 package com.cdx.cdxlearningmaterials.model.response;
 
-import com.cdx.cdxlearningmaterials.repository.dao.Lesson;
-import com.cdx.cdxlearningmaterials.repository.dao.Score;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.time.LocalDate;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetScoreResponse {
-    private UserResponse user;
-    private List<ScoreResponse> scores;
+    private Long userId;
+    private String fullName;
+    private Long score;
+
 }

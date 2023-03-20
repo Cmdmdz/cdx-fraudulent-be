@@ -5,15 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class ScoreResponse {
-    private Long lessonId;
     private Long scoreId;
-    private String lessonName;
-    private Long score;
-    private String fullName;
+
 
 }

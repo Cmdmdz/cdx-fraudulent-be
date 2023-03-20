@@ -17,6 +17,7 @@ public class RegisterService {
             if (Boolean.TRUE.equals(userRepository.existsByUsername(request.getUsername()))) {
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
+            request.setRole("user");
             User user = userRepository.save(request);
             return new ResponseEntity<>("Register successfully", HttpStatus.CREATED);
 

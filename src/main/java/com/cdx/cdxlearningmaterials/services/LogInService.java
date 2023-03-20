@@ -25,10 +25,17 @@ public class LogInService {
             byte[] TOKEN = new byte[24];
             SECURE_RANDOM.nextBytes(TOKEN);
             User user = userRepository.findByUsername(request.getUsername());
-            LogInResponse response = LogInResponse.builder().userId(user.getUserId()).username(user.getUsername()).token(ENCODER.encodeToString(TOKEN)).build();
+            LogInResponse response = LogInResponse
+                    .builder()
+                    .userId(user.getUserId())
+                    .username(user.getUsername())
+                    .role(user.getRole())
+                    .dob(user.getDob())
+                    .token(ENCODER.encodeToString(TOKEN))
+                    .build();
             return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>("Username or password is incorrect",HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Username or password is incorrect", HttpStatus.NOT_FOUND);
         }
     }
 }

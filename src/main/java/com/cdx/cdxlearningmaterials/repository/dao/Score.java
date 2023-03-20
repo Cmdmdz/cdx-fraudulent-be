@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -19,10 +20,12 @@ public class Score {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long scoreId;
-    @NotNull
-    private Long lessonId;
+
+    private String gameEP;
     @NotNull
     private Long score;
     @NotNull
     private Long userId;
+
+    private LocalDate updateDate;
 }

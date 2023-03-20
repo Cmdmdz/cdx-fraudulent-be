@@ -1,8 +1,6 @@
 package com.cdx.cdxlearningmaterials.controllers;
 
-import com.cdx.cdxlearningmaterials.repository.dao.Lesson;
-import com.cdx.cdxlearningmaterials.repository.dao.Score;
-import com.cdx.cdxlearningmaterials.services.LessonService;
+import com.cdx.cdxlearningmaterials.model.request.ScoreRequest;
 import com.cdx.cdxlearningmaterials.services.ScoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,21 +13,33 @@ import javax.validation.Valid;
 @RestController()
 public class ScoreController {
     private final ScoreService scoreService;
+
+    // info page
     @GetMapping("/score/user/{userId}")
-    public ResponseEntity<?> getScoreByUserId (@Valid @PathVariable Long userId ) {
+    public ResponseEntity<?> countScoreByUserId (@Valid @PathVariable Long userId ) {
         return scoreService.findAllScoreOfUserId(userId);
     }
+
+    // score page
     @GetMapping("/score/all")
     public ResponseEntity<?> getScoreOfAllUser () {
         return scoreService.findScoreOfAllUser();
     }
 
+    // game page
     @PostMapping("/score/add")
-    public ResponseEntity<?> addScore (@Valid @RequestBody Score request) {
+    public ResponseEntity<?> addScore (@Valid @RequestBody ScoreRequest request) {
         return scoreService.addScore(request);
     }
-    @DeleteMapping("/score/{scoreId}")
-    public ResponseEntity<?> deleteScoreById (@Valid @PathVariable Long scoreId) {
-        return scoreService.deleteScoreById(scoreId);
+
+    // page members
+    @GetMapping("/user/all")
+    public ResponseEntity<?> getuserAllByRoleIsUser () {
+        return scoreService.findAllUserByRoleIsUser();
+    }
+
+    @DeleteMapping("/user/{userId}")
+    public ResponseEntity<?> deleteScoreById (@Valid @PathVariable Long userId) {
+        return scoreService.deleteUserByIdAndScore(userId);
     }
 }

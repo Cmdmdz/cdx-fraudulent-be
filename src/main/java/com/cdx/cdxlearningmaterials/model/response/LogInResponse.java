@@ -13,4 +13,7 @@ public class LogInResponse {
     private Long userId;
     private String username;
     private String token;
+    private String role;
+    private String dob;
+
 }
