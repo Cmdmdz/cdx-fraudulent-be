@@ -30,7 +30,6 @@ public class LogInService {
                     .userId(user.getUserId())
                     .username(user.getUsername())
                     .role(user.getRole())
-                    .dob(user.getDob())
                     .token(ENCODER.encodeToString(TOKEN))
                     .build();
             return new ResponseEntity<>(response, HttpStatus.OK);

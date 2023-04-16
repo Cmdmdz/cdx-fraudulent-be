@@ -1,18 +1,16 @@
-package com.cdx.cdxlearningmaterials.model.response;
+package com.cdx.cdxlearningmaterials.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ScoreResponse {
-    private Long scoreId;
-
-
+public class UserDeleteRequest {
+    private List<Long> ids;
 }

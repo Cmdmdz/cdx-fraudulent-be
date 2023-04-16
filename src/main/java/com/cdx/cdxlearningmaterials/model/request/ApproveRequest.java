@@ -1,4 +1,4 @@
-package com.cdx.cdxlearningmaterials.model.response;
+package com.cdx.cdxlearningmaterials.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +11,6 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllScoreResponse {
-    private List<GetScoreResponse> usersScore;
+public class ApproveRequest {
+    private List<Long> ids;
 }

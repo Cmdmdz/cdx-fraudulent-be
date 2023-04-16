@@ -9,12 +9,14 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResponse {
-
+public class PosResponse {
     private Long id;
-    private String username;
     private String name;
-    private String dob;
-    private String status;
-
+    private String description;
+    private String account;
+    private String facebook;
+    private String line;
+    private String phone;
+    private String image;
+    private Boolean status;
 }

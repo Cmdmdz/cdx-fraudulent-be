@@ -24,11 +24,7 @@ public class User {
     @NotBlank
     private String password;
     @NotBlank
-    private String firstname;
-    @NotBlank
-    private String lastname;
-    @NotBlank
-    private String dob;
+    private String name;
     private String role;
 
 
